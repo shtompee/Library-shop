@@ -1,6 +1,4 @@
 [build]
+  base = "/opt/build/repo"
   command = "npm install --legacy-peer-deps && npm run build"
-
-  base = "src/app"
-  publish = "src/app/dist/library-shop"
-
+  publish = "/opt/build/repo/src/app/dist/library-shop"
