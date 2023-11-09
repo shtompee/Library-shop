@@ -72,9 +72,6 @@ export class EmailFormComponent {
         title: 'Подождите...',
         text: 'Отправка данных...',
         allowOutsideClick: false,
-        didOpen: () => {
-          Swal.showLoading();
-        },
       });
 
       this.productService.sendEmail(combinedData).subscribe(
