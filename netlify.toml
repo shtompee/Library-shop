@@ -1,5 +1,5 @@
 [build]
-  base = "LibraryAngular/library-shop/src/app"
+  base = "LibraryAngular/library-shop"
   command = "npm install --legacy-peer-deps && npm run build"
   publish = "dist/library-shop"
 
