@@ -1,7 +1,7 @@
 [build]
-  base = "LibraryAngular/library-shop"
+  base = "LibraryAngular/library-shop/src/app"
   command = "npm install --legacy-peer-deps && npm run build"
-  publish = "src/app/dist/library-shop"
+  publish = "dist/library-shop"
 
 [context.production.environment]
   NODE_ENV = "production"
