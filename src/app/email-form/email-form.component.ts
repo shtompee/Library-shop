@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -27,7 +27,7 @@ export class EmailFormComponent {
   constructor(
     private productService: ProductService,
     private cardService: productCard,
-    private formBuilder: FormBuilder,
+    @Inject(FormBuilder) private formBuilder: FormBuilder,
     private router: Router
   ) {}
 
