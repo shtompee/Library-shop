@@ -1,7 +1,0 @@
-[build]
-  base = "LibraryAngular/library-shop"
-  
-  publish = "dist/library-shop"
-
-[context.production.environment]
-  NODE_ENV = "production"
