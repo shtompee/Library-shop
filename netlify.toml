@@ -1,0 +1,2 @@
+ command = "npm install --legacy-peer-deps && npm run build"
+  node_version = "19.1.0"  # Укажи здесь нужную версию Node.js
