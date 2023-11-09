@@ -1,0 +1,127 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css"
+/>
+<h1 class="page-title has-dash">Basket</h1>
+<form [formGroup]="emailForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      placeholder="как к вам можно обращаться"
+      type="text"
+      id="name"
+      formControlName="name"
+    />
+    <div
+      *ngIf="
+        emailForm.get('name')?.hasError('required') &&
+        emailForm.get('name')?.touched
+      "
+      style="color: brown"
+    >
+      поле обязательно для заполнения.
+    </div>
+
+    <div
+      *ngIf="
+        emailForm.get('name')?.hasError('pattern') &&
+        emailForm.get('name')?.touched
+      "
+      style="color: brown"
+    >
+      поле должно содиржать только буквы
+    </div>
+  </div>
+  <label>Contact Number</label>
+
+  <div class="wrapper" style="width: 100%">
+    <ngx-intl-tel-input
+      [cssClass]="'custom'"
+      [preferredCountries]="preferredCountries"
+      [enableAutoCountrySelect]="true"
+      [enablePlaceholder]="true"
+      [searchCountryFlag]="true"
+      [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+      [selectFirstCountry]="false"
+      [selectedCountryISO]="CountryISO.Azerbaijan"
+      [maxLength]="15"
+      [phoneValidation]="true"
+      [separateDialCode]="separateDialCode"
+      [numberFormat]="PhoneNumberFormat.National"
+      name="phone"
+      formControlName="phone"
+    >
+    </ngx-intl-tel-input>
+  </div>
+
+  <!-- <input
+    type="text"
+    maxlength="15"
+    value="+994"
+    placeholder="введите ваш номер телефона"
+    name="ContactNumber"
+    formControlName="ContactNumber"
+    trim
+  /> -->
+  <div
+    *ngIf="
+      emailForm.get('phone')?.hasError('required') &&
+      emailForm.get('phone')?.touched
+    "
+    style="color: brown"
+  >
+    поле обязательно для заполнения.
+  </div>
+
+  <div
+    *ngIf="
+      emailForm.get('phone')?.hasError('pattern') &&
+      emailForm.get('phone')?.touched
+    "
+    style="color: brown"
+  >
+    неправельно заполнено поле
+  </div>
+  <div
+    *ngIf="
+      emailForm.get('ContactNumber')?.hasError('pattern') &&
+      emailForm.get('ContactNumber')?.touched
+    "
+    style="color: brown"
+  >
+    Неправильный формат номера телефона
+  </div>
+
+  <label>E-mail</label>
+  <input
+    placeholder="укажите вашу электронную почту"
+    type="email"
+    name="email"
+    formControlName="email"
+  />
+
+  <div
+    *ngIf="
+      emailForm.get('email')?.hasError('required') &&
+      emailForm.get('email')?.touched
+    "
+    style="color: brown"
+  >
+    поле обязательно для заполнения.
+  </div>
+
+  <div
+    *ngIf="
+      emailForm.get('email')?.hasError('email') &&
+      emailForm.get('email')?.touched
+    "
+    style="color: brown"
+  >
+    неправельно написан E-mail
+  </div>
+
+  <label>Предпочтение к заказу</label>
+  <textarea name="message" formControlName="message" maxlength="500"></textarea>
+
+  <button type="submit">Send Email</button>
+</form>

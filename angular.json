@@ -30,7 +30,11 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              
+              "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
+
             ],
             "scripts": []
           },
@@ -93,12 +97,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/purple-green.css",
+              "src/styles.scss",
+              "src/app/email-form/email-form.component.scss",
+              "./node_modules/intl-tel-input/build/css/intlTelInput.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/intl-tel-input/build/js/intlTelInput.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0df05f1a-29d9-41e8-8096-edbccd028875"
   }
 }
