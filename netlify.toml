@@ -1,3 +1,6 @@
 [build]
   command = "npm install --legacy-peer-deps && npm run build"
   node_version = "19.1.0"  # Укажи здесь нужную версию Node.js
+
+  [[plugins]]
+  package = "@netlify/angular-runtime@2.1.0"
