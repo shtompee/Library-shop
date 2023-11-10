@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "library-shop:build:production"
+              "buildTarget": "library-shop:build:production"
             },
             "development": {
-              "browserTarget": "library-shop:build:development"
+              "buildTarget": "library-shop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "library-shop:build"
+            "buildTarget": "library-shop:build"
           }
         },
         "test": {
