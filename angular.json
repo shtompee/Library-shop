@@ -30,10 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              
+            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
               "@angular/material/prebuilt-themes/purple-green.css",
-              "src/styles.scss"
+            "src/styles.scss"
 
             ],
             "scripts": []
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "library-shop:build:production"
+              "browserTarget": "library-shop:build:production"
             },
             "development": {
-              "buildTarget": "library-shop:build:development"
+              "browserTarget": "library-shop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "library-shop:build"
+            "browserTarget": "library-shop:build"
           }
         },
         "test": {
