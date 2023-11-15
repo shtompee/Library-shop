@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span class="logo"> <a href=""> Meda Beylie</a></span>
+    <span class="example-spacer"> </span>
+    <button class="buttons" mat-button routerLink="main">PRODUCTS</button>
+    <!-- <button class="buttons" mat-button routerLink="contact">CONTACT</button> -->
+    <button
+      class="buttons"
+      mat-button
+      (click)="goToBasket()"
+      [routerLink]="['/basket']"
+    >
+      BASKET
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="branding">
+  <div class="store-header">
+    <img src="/assets/images/Logo.png" alt="" />
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.router-outlet {
+  flex: 1; /* Это позволит контенту внутри router-outlet растягиваться на всю доступную высоту */
+}
+
+app-footer {
+  flex-shrink: 0; /* Это предотвратит сжатие footer при малом объеме контента */
+}

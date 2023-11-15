@@ -1,0 +1,153 @@
+<form
+  (ngSubmit)="onSubmit()"
+  id="myForm"
+  action="/upload"
+  method="post"
+  enctype="multipart/form-data"
+  [formGroup]="profileForm"
+>
+  <div><label class="contact-label" for="">Painting Name</label></div>
+  <input
+    formControlName="PaintingName"
+    class="input"
+    type="text"
+    name="name"
+    maxlength="20"
+    placeholder="введите название картины"
+    formControlName="name"
+  />
+  <br />
+  <!--.............................Validation.........................................-->
+  <div
+    *ngIf="
+      profileForm.get('name').hasError('required') &&
+      profileForm.get('name').touched
+    "
+    style="color: brown"
+  >
+    Название картины обязательно для заполнения.
+  </div>
+
+  <div
+    *ngIf="
+      profileForm.get('name').hasError('customValidation') &&
+      profileForm.get('name').touched
+    "
+    style="color: brown"
+  >
+    название картины должно содержать только буквы
+  </div>
+  <!--.................................................................................-->
+
+  <div><label class="contact-label" for="">prod-year</label></div>
+  <input
+    formControlName="prod_year"
+    class="input"
+    type="text"
+    name="prod_year"
+    maxlength="5"
+    placeholder="введите год"
+    formControlName="prod_year"
+  /><br />
+  <!--.............................Validation.........................................-->
+  <div
+    *ngIf="
+      profileForm.get('prod_year').hasError('required') &&
+      profileForm.get('prod_year').touched
+    "
+    style="color: brown"
+  >
+    Год картины обязателен для заполнения.
+  </div>
+
+  <div
+    *ngIf="
+      profileForm.get('prod_year').hasError('pattern') &&
+      profileForm.get('prod_year').touched
+    "
+    style="color: brown"
+  >
+    Год картины должен быть числом.
+  </div>
+
+  <!-- ........................................................................ -->
+
+  <div><label class="contact-label" for="">price</label></div>
+  <input
+    formControlName="price"
+    class="input"
+    type="text"
+    maxlength="5"
+    name="price"
+    placeholder="введите цену"
+    formControlName="price"
+    maxlength="10"
+  /><br />
+  <!--.............................Validation.........................................-->
+  <div
+    *ngIf="
+      profileForm.get('price').hasError('required') &&
+      profileForm.get('price').touched
+    "
+    style="color: brown"
+  >
+    Цена картины обязателен для заполнения.
+  </div>
+
+  <div
+    *ngIf="
+      profileForm.get('price').hasError('pattern') &&
+      profileForm.get('price').touched
+    "
+    style="color: brown"
+  >
+    Цена картины должен быть числом.
+  </div>
+  <!--................................................................................-->
+
+  <div><label class="contact-label" for="">Paint-size</label></div>
+  <input
+    formControlName="paint_size"
+    class="input"
+    type="text"
+    name="paint_size"
+    placeholder="например '50x70'"
+    maxlength="20"
+    formControlName="paint_size"
+  /><br />
+
+  <div><label class="contact-label" for="">techlogy</label></div>
+  <input
+    formControlName="techlogy"
+    class="input"
+    type="text"
+    name="techlogy"
+    maxlength="20"
+    formControlName="techlogy"
+  /><br />
+  <!--.............................Validation.........................................-->
+  <div
+    *ngIf="
+      profileForm.get('techlogy').hasError('required') &&
+      profileForm.get('techlogy').touched
+    "
+    style="color: brown"
+  >
+    поле обязательно для заполнения.
+  </div>
+  <!--................................................................................-->
+
+  <div>
+    <label class="contact-label" for="">Картина проданна</label>
+    <input
+      formControlName="isProductPurchased"
+      type="checkbox"
+      name="isProductPurchased"
+    />
+  </div>
+
+  <button [disabled]="profileForm.invalid" type="submit">Edit</button>
+  <div *ngIf="profileForm.invalid" style="color: brown">
+    заполните все поля правеьно
+  </div>
+</form>

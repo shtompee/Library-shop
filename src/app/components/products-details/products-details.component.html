@@ -1,0 +1,63 @@
+<div class="products" *ngIf="productDetail">
+  <div class="container">
+    <div class="product-page">
+      <div class="product-image">
+        <img src="{{ productDetail.list_image }}" alt="" />
+      </div>
+      <div class="product-header">
+        <h1 class="product-title">{{ productDetail.name | uppercase }}</h1>
+        <h2 class="product-price">{{ productDetail.price | currency }}</h2>
+        <div class="product-details">
+          Год:
+          {{ productDetail.prod_year }}
+          <br />
+          Инструменты:
+          {{ productDetail.techlogy }}
+          <br />
+          Размер холста:
+          {{ productDetail.paint_size }}
+        </div>
+
+        <button
+          (click)="back()"
+          (click)="scrol()"
+          mat-raised-button
+          class="product-details-button"
+        >
+          Back to List
+        </button>
+
+        <button
+          mat-raised-button
+          *ngIf="
+            !productDetail.is_purchased && !checkItemInCart(productDetail.id)
+          "
+          class="product-details-button"
+          [routerLink]="['/basket']"
+          (click)="addToCart(productDetail)"
+        >
+          Add to Basket
+        </button>
+
+        <button
+          mat-raised-button
+          class="product-details-button"
+          [routerLink]="['/basket']"
+          *ngIf="
+            !productDetail.is_purchased && checkItemInCart(productDetail.id)
+          "
+        >
+          в корзине
+        </button>
+
+        <button
+          mat-raised-button
+          *ngIf="productDetail.is_purchased"
+          class="product-details-button"
+        >
+          продано
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  
+  margin: 0;
+  font-family: Varela Round;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.iti {
+  
+  display: block !important;
+  margin-bottom: 20px;
+}
+
+.iti .dropdown-menu.country-dropdown {
+  
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-color: #c7cace;
+  margin-top: -1px;
+}
+
+.iti .iti__country-list {
+  box-shadow: none;
+  font-size: 14px;
+  margin-left: 0;
+  width: 244px;
+  max-height: 170px;
+}
+
+/* Добавьте остальные стили по необходимости */
+
+/* ngx-intl-tel-input стили */
+ngx-intl-tel-input input {
+  max-width: 640px;
+  height: 100%; /* Высота 100% от родительского контейнера */
+  margin-bottom: 1.25rem; /* Пример использования em или rem */
+  padding: 0.625rem; /* Пример использования em или rem */
+  border: 1px solid #c7cace;
+  border-radius: 0.25rem; /* Пример использования em или rem */
+  width: 100%; /* Ширина 100% от родительского контейнера */
+  font-size: 1rem; /* Пример использования em или rem */
+}
+
+
+
+ngx-intl-tel-input.ng-invalid.ng-touched input {
+  
+  border: 1px solid #c0392b;
+}
+
+ngx-intl-tel-input input:hover {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.24)
+}
+
+ngx-intl-tel-input input::placeholder {
+  font-size: 1rem; /* Используйте em или rem для относительного размера шрифта */
+  color: #999; /* Цвет подсказки */
+}
+
+/* Пример стилей для мобильных устройств */
+@media (max-width: 768px) {
+  ngx-intl-tel-input input::placeholder {
+    font-size: 0.9rem; /* Уменьшенный размер шрифта для мобильных устройств */
+    /* Другие стили для Placeholder на мобильных устройствах */
+  }
+}
+
+/* Пример стилей для планшетов и больших экранов */
+@media (min-width: 769px) {
+  ngx-intl-tel-input input::placeholder {
+    font-size: 1.1rem; /* Увеличенный размер шрифта для планшетов и больших экранов */
+    /* Другие стили для Placeholder на планшетах и больших экранах */
+  }
+}
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

@@ -1,0 +1,107 @@
+.container {
+  
+  max-width: 1024px;
+  position: relative;
+  object-fit: cover;
+  padding-top: 100px;
+  margin: 0 auto;
+  display: flex ;
+  flex-wrap: wrap ;
+  align-items: center;
+  justify-content: flex-start;
+  
+}
+
+mat-card{
+  
+  flex-basis: 280px;
+  text-align: center;
+  background-color:white;
+  overflow: hidden;
+  margin-bottom: 100px;
+  margin-left: 50px;
+}
+
+
+.image{
+  
+max-width: 280px;
+object-fit: cover;
+}
+
+.buttons{
+  
+  display: flex;
+ justify-content: space-between ;
+  color:black;
+  background-color:rgba(245, 222, 179, 0.806);
+  margin-left: 22px;
+  
+}
+
+
+.name-picture {
+  padding-top: 20px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 600;
+}
+.tool-picture {
+  padding-top: 0px;
+}
+.size-picture {
+}
+
+ngb-pagination{
+  margin-left: 40px;
+}
+
+@media screen and (max-width:1024px){
+  .container{
+    padding-top: 100px;
+    padding-right:25px;
+  }
+ }
+ @media screen and (max-width:1024px){
+  .container{
+    
+    align-items: center;
+    display: flex;
+   justify-content: center;
+   padding-right:25px;
+  }
+ }
+ @media screen and (max-width:768px){
+  .container{
+   
+    align-items: center;
+    display: flex;
+   justify-content: center;
+   padding-right:35px;
+  }
+ }
+@media screen and (max-width:632px){
+ .container{
+ 
+  align-items: center;
+    justify-content: center;
+    padding-right:25px;
+ }
+}
+@media screen and (max-width:435px){
+  .container{
+     justify-content: center;
+     align-items: center;
+     padding-right:35px;
+  }
+ }
+
+@media screen and (max-width:375px){
+  .container{
+    justify-content: center;
+    align-items: center;
+    // padding-right:  45px;
+ }
+ }
+

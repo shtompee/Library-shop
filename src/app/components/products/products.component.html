@@ -1,0 +1,88 @@
+<div class="container">
+  <mat-card class="example-card" *ngFor="let products of product">
+    <img class="image" mat-card-image src="{{ products.list_image }}" />
+    <mat-card-content>
+      <p class="name-picture">{{ products.name }}, {{ products.prod_year }}.</p>
+      <p class="tool-picture">{{ products.techlogy }}</p>
+      <p class="size-picture">{{ products.paint_size }}</p>
+      <p class="product-price">{{ products.price | currency }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        class="buttons"
+        [ngStyle]="{ display: showButton ? 'none' : 'flex' }"
+        mat-raised-button
+        [routerLink]="['/productDetail', products.id]"
+        [queryParams]="{ page: page, fromProduct: true }"
+        (click)="fromProduct(products)"
+      >
+        Details
+      </button>
+      <button
+        *ngIf="!products.is_purchased && !checkItemInCart(products.id)"
+        class="buttons"
+        [ngStyle]="{ display: showButton ? 'none' : 'flex' }"
+        mat-raised-button
+        [routerLink]="['/basket']"
+        (click)="addToCart(products)"
+      >
+        Add to Basket
+      </button>
+
+      <button
+        mat-raised-button
+        class="buttons"
+        *ngIf="!products.is_purchased && checkItemInCart(products.id)"
+        [ngStyle]="{ display: showButton ? 'none' : 'flex' }"
+        [routerLink]="['/basket']"
+      >
+        в корзине
+      </button>
+
+      <button
+        mat-raised-button
+        [ngStyle]="{ display: showButton ? 'none' : 'flex' }"
+        *ngIf="products.is_purchased"
+        class="buttons"
+      >
+        продано
+      </button>
+
+      <div *ngIf="showButton">
+        <button
+          class="buttons"
+          (click)="setEditItem(products.id)"
+          [routerLink]="['/eddit']"
+          mat-raised-button
+        >
+          Edit
+        </button>
+      </div>
+      <div *ngIf="showButton">
+        <button
+          class="buttons"
+          mat-raised-button
+          (click)="removeItem(products.id)"
+        >
+          Remowe
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div *ngIf="showButton">
+  <button [routerLink]="['/addNewProduct']" class="buttons" mat-raised-button>
+    Add New Product
+  </button>
+</div>
+
+<ngb-pagination
+  class="d-flex justify-content-center"
+  [collectionSize]="collectionSize"
+  [(page)]="page"
+  [maxSize]="itemsPerPage"
+  [pageSize]="itemsPerPage"
+  [rotate]="true"
+  [boundaryLinks]="true"
+  (pageChange)="onPageChanged()"
+></ngb-pagination>

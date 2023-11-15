@@ -1,0 +1,89 @@
+
+
+
+body {
+  background-color: rgb(255, 247, 238);
+  margin: 300px 0 0; /* Добавлен отступ сверху в 300px, остальные отступы убраны */
+  padding: 0;
+}
+
+form {
+  align-items: center;
+  max-width: 640px;
+  padding: 50px;
+  text-align: center;
+  margin: 0 auto; /* Центрирование формы по горизонтали */
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0px auto 80px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+   input::placeholder {
+    font-size: 0.9rem; /* Уменьшенный размер шрифта для мобильных устройств */
+    /* Другие стили для Placeholder на мобильных устройствах */
+  }
+}
+
+@media (max-width: 320px) {
+  input::placeholder {
+   font-size: 0.7rem; /* Уменьшенный размер шрифта для мобильных устройств */
+   /* Другие стили для Placeholder на мобильных устройствах */
+ }
+}
+
+.page-title{
+  padding-top: 150px;
+  text-align: center;
+  
+}
+
+
+textarea {
+   /* Отключить растягивание */
+  min-height: 80px;
+  max-height: 200px; /* Установить максимальную высоту в пикселях */
+  overflow-y: auto; /* Добавить вертикальную прокрутку, если текст выходит за пределы максимальной высоты */
+}
